@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../../../vendor/magento/framework/Module/etc/module.xsd">
+    <head>
+<!--        <css src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" src_type="url" />-->
+        <css src="CustomKaza_Theme/css/bootstrap.css" />
+        <!-- CustomKaza_Theme => name of module because it read from pub/static and i read css from pub/static -->
+
+        <!--        <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" src_type="url" />-->
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+
+    </head>
+</page>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- test api Group -->
+    <route url="/V2/testapi/custom/me" method="GET">
+        <service class="Webkul\TestApi\Api\TestApiManagementInterface" method="getApiData"/>
+        <resources>
+            <resource ref="anonymous"/> <!-- admin => Admin, self => Customer , anonymous => Guest -->
+        </resources>
+<!--
+now the resource tag defines the access control these can be three level of access:
+
+     Admin : for admin level access you need to define admin resource in the resource tag.
+     Customer: for customer level access you need to set self in the resource.
+     Guest: for guest level resources you need to define anonymous in the resource tag.
+
+    I have defined self so this resource will work for customer level access.
+-->
+<!--        <data>-->
+<!--            <parameter name="id" force="true">%customer_id%</parameter>-->
+<!--        </data>-->
+    </route>
+</routes>

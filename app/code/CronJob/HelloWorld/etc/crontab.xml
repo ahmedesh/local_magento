@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+
+    <group id="default">
+        <job instance="CronJob\HelloWorld\Cron\Test" method="execute" name="cronjob_helloworld_cron">
+            <schedule>* * * * *</schedule>  <!-- schedule:=>  cron format -->
+        </job>
+    </group>
+
+</config>
+
+
+<!--    group id is your cron group name. You can run only cron for single group at a time.-->
+<!--    job instance is a class to be instantiated (classpath).-->
+<!--    job method is the method in job instance to call.-->
+<!--    job name is Unique ID for this cron job.-->
+<!--    schedule is the schedule in cron format. The following graph shows what it consists of:-->
+
+    <!-- php bin/magento cron:run -group="default"    group="default" => come from crontab.xml-->
+    <!-- php bin/magento cron:run -group="index"      group="index"   => come from crontab.xml-->

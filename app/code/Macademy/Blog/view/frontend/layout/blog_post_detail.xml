@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main">
+            <block name="blog.post.detail" template="Macademy_Blog::post/detail.phtml">
+<!--            <container htmlTag="h1" htmlId="blog-header">  &lt;!&ndash; استخدمت ال container عشان احط فيه ال htmltg و htmlId و htmlClass &ndash;&gt;-->
+<!--                <block name="blog.post.sidebar.extra" template="Macademy_Blog::post/sidebar.phtml"/>-->
+<!--            </container>-->
+                <arguments>
+                    <argument name="post_vm" xsi:type="object">Macademy\Blog\ViewModel\Post</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="sidebar.additional">
+            <block name="blog.post.sidebar" template="Macademy_Blog::post/sidebar.phtml">
+                <arguments>
+                    <argument name="post_vm" xsi:type="object">Macademy\Blog\ViewModel\Post</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+<!--        <move element="wishlist_sidebar" destination="sidebar.additional" before="catalog.compare.sidebar" />-->
+<!--        <move element="wishlist_sidebar" destination="sidebar.additional" before="-" />--> <!-- before all -->
+
+        <!--        <move element="wishlist_sidebar" destination="sidebar.additional" after="catalog.compare.sidebar" />-->
+<!--        <move element="wishlist_sidebar" destination="sidebar.additional" after="-" />--> <!-- after all -->
+
+<!--        <referenceBlock name="catalog.compare.sidebar" display="false"/> &lt;!&ndash; to prevent this block from display only but not removed &ndash;&gt;-->
+
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>  <!-- to remove this block forever -->
+        <referenceBlock name="wishlist_sidebar" template="Macademy_Blog::wishlist/sidebar.phtml"/>
+        <referenceBlock name="catalog.compare.sidebar" display="false"/> <!-- to prevent this block from display only but not removed &ndash;&gt;-->
+        <referenceBlock name="wishlist_sidebar" display="false"/>   <!--  to prevent this block from display only but not removed &ndash;&gt;-->
+    </body>
+
+</page>
